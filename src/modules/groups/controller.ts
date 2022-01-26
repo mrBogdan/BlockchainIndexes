@@ -10,11 +10,8 @@ export class GroupsController {
         return this.groupsService.getGroupIds();
     }
 
-    /**
-     * @param id {number}
-     */
-    @Get('/:groupId')
-    getGroupById(@Param('groupId', ParseIntPipe) id): Promise<any>  {
+    @Get('/:id')
+    getGroupById(@Param('id', ParseIntPipe) id: number): Promise<any>  {
         return this.groupsService.getGroupById(id);
     }
 }

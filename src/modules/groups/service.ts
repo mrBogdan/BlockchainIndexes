@@ -10,7 +10,7 @@ export class GroupsService {
     return this.ethClient.getGroupIds();
   }
 
-  async getGroupById(id: string) {
+  async getGroupById(id: number) {
     return this.ethClient.getGroupById(id);
   }
 }

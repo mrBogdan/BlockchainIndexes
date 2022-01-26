@@ -5,7 +5,7 @@ import { EthClient } from '../../third_party/ethClient/EthClient';
 export class IndexesService {
   constructor(private ethClient: EthClient) {}
 
-  async getIndexById(id: string) {
+  async getIndexById(id: number) {
     return this.ethClient.getIndexById(id);
   }
 }

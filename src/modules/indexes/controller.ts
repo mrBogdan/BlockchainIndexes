@@ -5,11 +5,8 @@ import { IndexesService } from './service';
 export class IndexesController {
   constructor(private indexesService: IndexesService) {}
 
-  /**
-   * @param id {number}
-   */
   @Get('/:id')
-  async getIndexById(@Param('id', ParseIntPipe) id) {
+  async getIndexById(@Param('id', ParseIntPipe) id: number) {
     return this.indexesService.getIndexById(id);
   }
 }

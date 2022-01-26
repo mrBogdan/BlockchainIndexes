@@ -11,11 +11,11 @@ export class EthClient {
     return contract.methods.getGroupIds().call()
   }
 
-  async getGroupById(id: string) {
+  async getGroupById(id: number) {
     return contract.methods.getGroup(id).call();
   }
 
-  async getIndexById(id: string) {
+  async getIndexById(id: number) {
     return contract.methods.getIndex(id).call();
   }
 

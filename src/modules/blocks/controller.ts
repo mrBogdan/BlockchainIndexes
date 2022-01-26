@@ -7,9 +7,6 @@ export class BlocksController {
   constructor(private readonly blocksService: BlocksService) {
   }
 
-  /**
-   * @param id {number|string}
-   */
   @Get('/:id')
   async getById(@Param('id', new BlockValidationPipe()) id: string) {
     return this.blocksService.getEthBlockById(id);
