@@ -1,5 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { BlocksService } from './service';
+import { BlockValidationPipe } from '../../pipes/block-validation.pipe';
 
 @Controller('blocks')
 export class BlocksController {
@@ -10,7 +11,7 @@ export class BlocksController {
    * @param id {number|string}
    */
   @Get('/:id')
-  async getById(@Param('id') id: string) {
+  async getById(@Param('id', new BlockValidationPipe()) id: string) {
     return this.blocksService.getEthBlockById(id);
   }
 }
