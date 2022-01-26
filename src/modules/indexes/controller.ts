@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { IndexesService } from './service';
 
 @Controller('indexes')
@@ -9,7 +9,7 @@ export class IndexesController {
    * @param id {number}
    */
   @Get('/:id')
-  async getIndexById(@Param('id') id) {
+  async getIndexById(@Param('id', ParseIntPipe) id) {
     return this.indexesService.getIndexById(id);
   }
 }

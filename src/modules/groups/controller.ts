@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { GroupsService } from './service';
 
 @Controller('groups')
@@ -14,7 +14,7 @@ export class GroupsController {
      * @param id {number}
      */
     @Get('/:groupId')
-    getGroupById(@Param('groupId') id): Promise<any>  {
+    getGroupById(@Param('groupId', ParseIntPipe) id): Promise<any>  {
         return this.groupsService.getGroupById(id);
     }
 }
